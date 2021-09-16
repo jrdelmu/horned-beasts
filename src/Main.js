@@ -1,8 +1,8 @@
 import { Component } from 'react';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Image from 'react-bootstrap/Image'
+// import Col from 'react-bootstrap/Col'
+// import Image from 'react-bootstrap/Image'
 import Card from 'react-bootstrap/Card'
 
 class Main extends Component {
@@ -37,11 +37,12 @@ class Main extends Component {
       //     <Col><HornedBeast obj={objs[5]} /></Col>
       //   </Row>
       // </Container>
-      <div>
-      {this.props.beastObj.map((beast)=>{
-        return <HornedBeast title={beast.title} image_url={beast.image_url} description={beast.description}/>;
-      })}
-      </div>
+      <Container fluid>
+        <Row xs={1} sm={2} md={3} lg={4}> 
+          {this.props.beastObj.map((beast)=>{
+            return <HornedBeast title={beast.title} image_url={beast.image_url} description={beast.description}/>})}
+        </Row>
+      </Container>
     );
   }
 }
