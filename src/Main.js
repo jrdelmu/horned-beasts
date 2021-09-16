@@ -8,7 +8,7 @@ import Card from 'react-bootstrap/Card'
 class Main extends Component {
   render(){
 
-    const objs = this.props.beastObj;
+    // const objs = this.props.beastObj;
 
     return (
       // <div>
@@ -24,18 +24,24 @@ class Main extends Component {
       //   description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Erat imperdiet sed euismod nisi porta lorem mollis. Nunc pulvinar sapien et ligula ullamcorper malesuada proin libero.'}
       //   />
       // </div>
-      <Container>
-        <Row>
-          <Col><HornedBeast obj={objs[0]} /></Col>
-          <Col><HornedBeast obj={objs[1]} /></Col>
-          <Col><HornedBeast obj={objs[2]} /></Col>
-        </Row>
-        <Row>
-          <Col><HornedBeast obj={objs[3]} /></Col>
-          <Col><HornedBeast obj={objs[4]} /></Col>
-          <Col><HornedBeast obj={objs[5]} /></Col>
-        </Row>
-      </Container>
+
+      // <Container>
+      //   <Row>
+      //     <Col><HornedBeast obj={objs[0]} /></Col>
+      //     <Col><HornedBeast obj={objs[1]} /></Col>
+      //     <Col><HornedBeast obj={objs[2]} /></Col>
+      //   </Row>
+      //   <Row>
+      //     <Col><HornedBeast obj={objs[3]} /></Col>
+      //     <Col><HornedBeast obj={objs[4]} /></Col>
+      //     <Col><HornedBeast obj={objs[5]} /></Col>
+      //   </Row>
+      // </Container>
+      <div>
+      {this.props.beastObj.map((beast)=>{
+        return <HornedBeast title={beast.title} image_url={beast.image_url} description={beast.description}/>;
+      })}
+      </div>
     );
   }
 }
@@ -67,11 +73,11 @@ class HornedBeast extends Component{
       // </div>
 
 <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" onClick={this.handleClick} src={this.props.obj.image_url} />
+  <Card.Img variant="top" onClick={this.handleClick} src={this.props.image_url} />
   <Card.Body>
-    <Card.Title>{this.props.obj.title}</Card.Title>
+    <Card.Title>{this.props.title}</Card.Title>
     <Card.Text>
-       {this.props.obj.description}
+       {this.props.description}
        <h3>{this.state.likes}</h3>
     </Card.Text>
   </Card.Body>
