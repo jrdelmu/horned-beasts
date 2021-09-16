@@ -5,7 +5,6 @@ import Header from './Header.js';
 import Footer from './Footer.js';
 import Main from './Main.js';
 import beastObj from './data.json';
-import { Component } from 'react';
 import SelectedBeast from './SelectedBeast.js';
 
 function App() {
@@ -13,8 +12,7 @@ function App() {
     <Container>
       <Header title = 'Horned Beasts!'/>
       <Main message='yo' beastObj={beastObj} />
-      <SelectedBeast />
-      <Footer text = 'Jovincent Del Mundo'/>  
+      <Footer text = 'Jovincent Del Mundo'/> 
     </Container>
   );
 }
