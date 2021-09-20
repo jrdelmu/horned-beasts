@@ -9,8 +9,11 @@ export default class HornedBeasts extends Component {
 
     this.state = {
       likes:0,
+      newSelectedBeast: null
     }
   }
+
+  updateSelected = () => this.props.updateSelected(this.state.newSelectedBeast);
 
   handleClick = () => {
     this.props.changeBeast(this.props.beast);
@@ -29,6 +32,7 @@ export default class HornedBeasts extends Component {
       <Card.Title>{this.props.beast.title}</Card.Title>
       <Card.Text>
          {this.props.beast.description}
+         <p>Horns: {this.props.beast.horns}</p>
          <h3>{this.state.likes}</h3>
       </Card.Text>
       <Button onClick={this.handleVote} variant="danger">{'<3 '}{this.state.votes}</Button>
