@@ -22,21 +22,26 @@ class App extends Component{
   }
 
   handleSelect = (choice) => {
-    let choices = {};
 
-    if(choice === '1'){
-      choices = beastObj.filter(beast => (beast.horns === 1))
+    // if(choice === '1'){
+    //   choices = beastObj.filter(beast => (beast.horns === 1))
+    // }
+    // else if(choice === '2'){
+    //   choices = beastObj.filter(beast => (beast.horns === 2))
+    // }
+    // else if(choice === '3'){
+    //   choices = beastObj.filter(beast => (beast.horns === 3))
+    // }
+    // else if(choice === '100'){
+    //   choices = beastObj.filter(beast => (beast.horns === 100))
+    // }
+
+    let allBeasts = beastObj;
+    if(choice){
+      allBeasts = beastObj.filter(beast => beast.horns === choice);
     }
-    else if(choice === '2'){
-      choices = beastObj.filter(beast => (beast.horns === 2))
-    }
-    else if(choice === '3'){
-      choices = beastObj.filter(beast => (beast.horns === 3))
-    }
-    else if(choice === '100'){
-      choices = beastObj.filter(beast => (beast.horns === 100))
-    }
-    this.setState({renderChoices: choices})
+    console.log(allBeasts)
+    this.setState({renderChoices: allBeasts})
   }
 
   changeBeast = (beast) => {
@@ -55,9 +60,9 @@ class App extends Component{
     return (
       <Container>
         <Header title = 'Horned Beasts!'/>
-        <HornChoices onSelect={this.handleForm}/>
+        <HornChoices onSelect={this.handleSelect}/>
         <Main 
-          beastObj={this.setState.renderChoices}
+          beastObj={this.state.renderChoices}
           changeBeast={this.changeBeast} 
           showModal={this.showModal} 
         />
