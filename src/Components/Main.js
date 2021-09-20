@@ -37,9 +37,8 @@ export default class Main extends Component {
       //   </Row>
       // </Container>
       <Container fluid>
-        <Row xs={1} sm={2} md={3} lg={4}> 
-        {beastObj.map((beast)=>{
-            return <HornedBeasts title={beast.title} image_url={beast.image_url} description={beast.description}/>})}
+        <Row xs={1} sm={2} md={3} lg={4}>
+          {beastObj.map(beast => (<HornedBeasts key={beast.title} beast={beast} changeBeast={this.props.changeBeast} showModal={this.props.showModal}/>))}
         </Row>
       </Container>
     );
