@@ -80,3 +80,14 @@ Start time: 3 PM
 Finish time: 6 PM
 
 Actual time needed to complete: 3 Hours
+
+# Lab 4
+Number and name of feature: Feature #1: Forms and Filter
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 6 PM (9/19/21)
+
+Finish time: 2 PM (9/20/21)(thank you Hex)
+
+Actual time needed to complete: 5 hours

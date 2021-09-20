@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from "react"
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 
